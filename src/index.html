@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./assets/style.css" />
+		<title>Man's Sandwich</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="wrapper wrapUp"></div>
+			<div class="wrapper wrapDown">
+				<button id="turnOn" class="btn turnOn">
+					<img src="./img/icons/turn-off.svg" alt="Turn of" />
+				</button>
+			</div>
+			<header class="header">
+				Man's Sandwich
+				<img class="logo" src="./img/icons/logo.svg" alt="Sandwich" />
+				<button id="turnOff" class="btn turnOff">
+					<img src="./img/icons/turn-off.svg" alt="Turn off" />
+				</button>
+			</header>
+			<div class="slider">
+				<section class="slide">
+					<h1 class="slide__title">Choose your favorite bread!</h1>
+					<div class="slide__cards">
+						<div class="card" data-choice="bread" id="bread_01">
+							<div class="card__title">White Bread</div>
+							<div class="card__img">
+								<img
+									src="./img/slides/bread_01.png"
+									alt="White bread"
+								/>
+							</div>
+						</div>
+						<div class="card" data-choice="bread" id="bread_02">
+							<div class="card__title">Brown Bread</div>
+							<div class="card__img">
+								<img
+									src="./img/slides/bread_02.png"
+									alt="Brown bread"
+								/>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="slide">
+					<h1 class="slide__title">
+						Would you like to add lettuce leaves?
+					</h1>
+					<div class="slide__cards">
+						<div
+							class="card"
+							data-choice="lettuce"
+							id="lettuce"
+						>
+							<div class="card__title">Yes!</div>
+							<div class="card__img">
+								<img
+									src="./img/slides/lettuce.png"
+									alt="Lettuce"
+								/>
+							</div>
+						</div>
+						<div
+							class="card card_skip"
+							data-choice="lettuce"
+							id="none"
+						>
+							<div class="card__title">No thanks!</div>
+							<div class="card__img">
+								<img src="./img/icons/say-no.svg" alt="No thanks" />
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="slide">
+					<h1 class="slide__title">Choose your favorite sausage!</h1>
+					<div class="slide__cards">
+						<div
+							class="card"
+							data-choice="sausage"
+							id="sausage_01"
+						>
+							<div class="card__title">Soppressata</div>
+							<div class="card__img">
+								<img src="./img/slides/sausage_01.png" alt="Soppressata" />
+							</div>
+						</div>
+						<div class="card" data-choice="sausage" id="sausage_02">
+							<div class="card__title">Salami</div>
+							<div class="card__img">
+								<img src="./img/slides/sausage_02.png" alt="Salami" />
+							</div>
+						</div>
+						<div class="card" data-choice="sausage" id="sausage_03">
+							<div class="card__title">Saveloy</div>
+							<div class="card__img">
+								<img src="./img/slides/sausage_03.png" alt="Saveloy" />
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="slide">
+					<h1 class="slide__title">Choose your favorite cheese!</h1>
+					<div class="slide__cards">
+						<div class="card" data-choice="cheese" id="cheese_01">
+							<div class="card__title">Hard cheese</div>
+							<div class="card__img">
+								<img src="./img/slides/cheese_01.png" alt="Hard Cheese" />
+							</div>
+						</div>
+						<div class="card" data-choice="cheese" id="cheese_02">
+							<div class="card__title">Grated cheese</div>
+							<div class="card__img">
+								<img src="./img/slides/cheese_02.png" alt="Grated Cheese" />
+							</div>
+						</div>
+						<div
+							class="card card_skip"
+							data-choice="cheese"
+							id="none"
+						>
+							<div class="card__title">No thanks!</div>
+							<div class="card__img">
+								<img src="./img/icons/say-no.svg" alt="No thanks" />
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="slide">
+					<h1 class="slide__title">Choose your favorite tomato!</h1>
+					<div class="slide__cards">
+						<div class="card" data-choice="tomato" id="tomato_01">
+							<div class="card__title">Cherry</div>
+							<div class="card__img">
+								<img src="./img/slides/tomato_01.png" alt="Cherry" />
+							</div>
+						</div>
+						<div class="card" data-choice="tomato" id="tomato_02">
+							<div class="card__title">Tomato</div>
+							<div class="card__img">
+								<img src="./img/slides/tomato_02.png" alt="Big Tomato" />
+							</div>
+						</div>
+						<div
+							class="card card_skip"
+							data-choice="tomato"
+							id="none"
+						>
+							<div class="card__title">No thanks!</div>
+							<div class="card__img">
+								<img src="./img/icons/say-no.svg" alt="No thanks" />
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="slide">
+					<h1 class="slide__title">Bon Appetit!</h1>
+					<div class="slide__cards">
+						<div class="meal">
+							<div class="meal__ingredient meal__ingredient_bread">
+                                <img data-choice="bread" src=''  alt="Bread">
+                            </div>
+							<div class="meal__ingredient meal__ingredient_lettuce">
+                                <img data-choice="lettuce" src=''  alt="Lettuce">
+                            </div>
+							<div class="meal__ingredient meal__ingredient_sausage">
+                                <img data-choice="sausage" src=''  alt="Sausage">
+                            </div>
+							<div class="meal__ingredient meal__ingredient_cheese">
+                                <img data-choice="cheese" src=''  alt="Cheese">
+                            </div>
+							<div class="meal__ingredient meal__ingredient_tomato">
+                                <img data-choice="tomato" src=''  alt="Tomato">
+                            </div>
+						</div>
+					</div>
+                </section>
+			</div>
+			<div class="slider__actions">
+				<div class="options">
+					<div>
+						<button id="slideDown" class="btn slider__btn">
+							<img
+								src="./img/icons/chevron-arrow-down.svg"
+								alt="Slide down"
+							/>
+						</button>
+						<button id="slideUp" class="btn slider__btn">
+							<img
+								src="./img/icons/chevron-arrow-up.svg"
+								alt="Slide up"
+							/>
+						</button>
+						<div id="slideCount" class="slider__input"></div>
+					</div>
+					<div class="options__right">
+						<button id="slideToUp" class="btn slider__btn">
+							<img
+								src="./img/icons/chevron-arrow-to-up.svg"
+								alt="Slide to up"
+							/>
+						</button>
+						<button id="slideToDown" class="btn slider__btn">
+							<img
+								src="./img/icons/chevron-arrow-to-down.svg"
+								alt="Slide to down"
+							/>
+						</button>
+						<button id="random" class="btn slider__btn slider__btn_large">
+							Random!
+						</button>
+						<button id="cook" class="btn slider__btn slider__btn_large cook">
+							Cook!
+						</button>
+					</div>
+					<button id="moreOptions" class="btn slider__btn options__more">...</button>
+				</div>
+				<button id="reset" class="btn slider__btn slider__btn_large">
+					<img
+					src="./img/icons/refresh.svg"
+					alt="Refresh"
+				/>
+				</button>
+
+			</div>
+		</div>
+
+		<script src="./js/script.js"></script>
+	</body>
+</html>
