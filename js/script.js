@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
     turnOffBtn.addEventListener('click', () => {
         mainContainer.classList.add('turnedOff')
     })
-
+    
     // Initialize function 
     const initialize = () => {
         i = 0
