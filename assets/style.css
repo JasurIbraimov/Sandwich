@@ -196,6 +196,8 @@ body {
 	--slider-icon-width: 25px;
 	--slider-icon-height: 25px;
 	--slider-input-width: 60px;
+	--tip-width: 140px;
+	--tip-height: 60px;
 }
 .slider__actions {
     position: absolute;
@@ -224,9 +226,7 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-.options .options__more {
-	display: none;
-}
+
 .slider__btn {
 	border-radius: 50%;
 	background: var(--main-linear-gradient);
@@ -248,7 +248,34 @@ body {
 	transition: opacity .25s;
 	color: #fff;
 }
-
+.more {
+	position: relative;
+}
+.more .tip{
+	visibility: hidden;
+	position: absolute;
+	opacity: 0;
+	transition: opacity .25s, height 0.25s;
+	top: 0;
+    transform: translate(-50%, -135%);
+    background-color: #fff;
+	height: 0;
+	width: var(--tip-width);
+    border-radius: 10px;
+    left: 42%;
+    padding: var(--p-1);
+}
+.more .tip::after {
+	content: '';	
+	position: absolute;
+	bottom: 0;
+	transform: translateY(100%);
+	border: 15px solid transparent;
+	border-top: 15px solid #fff;
+}
+.slider__btn.more__btn {
+	display: none;
+}
 .slider__btn img {
 	width: var(--slider-icon-width);
 	height: var(--slider-icon-height);
@@ -454,6 +481,12 @@ body {
 }
 
 @media (max-width: 768px) {
+	.more .tip.tip__popup{
+		opacity: 1;
+		height: var(--tip-height);
+		transform: translate(-50%, -135%);
+		visibility: visible;
+	}
 	.card {
 		--skip-img-width: 100px;
 		--skip-img-height: 100px;
@@ -475,7 +508,7 @@ body {
 	.card:first-child {
 		margin-right: var(--m-1);
 	}
-	.options .options__more {
+	.slider__btn.more__btn {
 		display: flex;
 	}
 	.options .options__right {
@@ -492,6 +525,7 @@ body {
 	.options .options__right.options__popup {
 		transform: translate(-50%, -100%);
 	}
+	
 }
 @media (max-width: 425px) {
 	:root {
@@ -540,6 +574,7 @@ body {
 	}
 }
 @media (max-width: 320px) {
+
 	.card {
 		--skip-img-width: 50px;
 		--skip-img-height: 50px;

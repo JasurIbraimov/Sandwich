@@ -16,19 +16,32 @@ window.addEventListener('DOMContentLoaded', () => {
             moreOptions = document.getElementById('moreOptions'),
             sliderSections = document.querySelectorAll('.slider .slide'),
             options = document.querySelector('.options'),
+            optionsRight = document.querySelector('.options__right'),
             mealIngredientsImgs = document.querySelectorAll('.meal .meal__ingredient img')
     let i = 0,
-        choice = {}
-    
+        choice = {},
+        popupShown = false
+
+    const tipPopup = () => {
+        document.querySelector('.more .tip').classList.add('tip__popup')
+        setTimeout(() => {
+            document.querySelector('.more .tip').classList.remove('tip__popup')
+        }, 2000)
+    }
     // App start
     turnOnBtn.addEventListener('click', () => {
-        mainContainer.classList.remove('turnedOff')
+        mainContainer.classList.remove('turnedOff') 
+        if(!popupShown) {
+            tipPopup()
+        }
     })
     
     turnOffBtn.addEventListener('click', () => {
         mainContainer.classList.add('turnedOff')
+        document.querySelector('.more .tip').classList.remove('tip__popup')
+        popupShown = true
     })
-    
+
     // Initialize function 
     const initialize = () => {
         i = 0
@@ -132,6 +145,7 @@ window.addEventListener('DOMContentLoaded', () => {
             resetBtn.removeAttribute('disabled')
             if(Object.values(choice).every(el => el.length)) {
                 cookBtn.removeAttribute('disabled')
+                optionsRight.classList.add('options__popup')
             }
         })
     })
@@ -153,6 +167,7 @@ window.addEventListener('DOMContentLoaded', () => {
             resetBtn.removeAttribute('disabled')
             if(Object.values(choice).every(el => el.length)) {
                 cookBtn.removeAttribute('disabled')
+                optionsRight.classList.add('options__popup')
             }
         })
     })
@@ -160,6 +175,8 @@ window.addEventListener('DOMContentLoaded', () => {
     // Reset btn
     resetBtn.addEventListener('click', () => {
         initialize()
+        document.querySelector('.options__right').classList.remove('options__popup')
+
     })
 
     // Cook btn
@@ -178,6 +195,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Show more options 
     moreOptions.addEventListener('click', () => {
-        document.querySelector('.options__right').classList.toggle('options__popup')
+        optionsRight.classList.toggle('options__popup')
+        document.querySelector('.more .tip').classList.remove('tip__popup')
     })
+
 })
